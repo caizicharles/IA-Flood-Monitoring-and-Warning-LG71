@@ -1,7 +1,9 @@
 #geo
 
-x = (1,2)
-s_d = []
+import haversine
 
 def stations_by_distance(stations, p):
-    s_d.append(haversine(stations, x))
+
+    s_d = []
+
+    s_d.append(haversine(stations, p))
