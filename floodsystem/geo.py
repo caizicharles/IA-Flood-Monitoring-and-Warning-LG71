@@ -26,3 +26,20 @@ def stations_by_distance(stations, p):
         name_n_dis.append(tuple(s_name[i], s_dis[i]))
 
     return sorted_by_key(name_n_dis, 1)
+
+
+
+from floodsystem.stationdata import build_station_list
+
+def show():
+
+    show_list0 = []
+    show_list = []
+    show_list0.append(stations_by_distance(build_station_list(), (1, 2)))
+
+    for j in range(0, 10):
+        show_list.append(show_list0[j])
+
+    return show_list
+
+print(show())
