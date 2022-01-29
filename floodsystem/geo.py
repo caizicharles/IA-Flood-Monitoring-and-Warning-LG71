@@ -1,6 +1,6 @@
 # Copyright (C) 2018 Garth N. Wells
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: M IT
 """This module contains a collection of functions related to
 geographical data.
 
@@ -8,7 +8,7 @@ geographical data.
 
 """Task 1B"""
 
-from .utils import sorted_by_key  # noqa
+from .utils import sorted_by_key
 from haversine import haversine, Unit
 
 def stations_by_distance(stations, p):
@@ -18,16 +18,14 @@ def stations_by_distance(stations, p):
     s_dis = []
 
     for location in stations:
-        if location.name is True:
-            s_name.append(location.name)
-        
-        elif location.coord is True:
-            s_dis.append(haversine(location.coord, p))
+        s_name.append(location.name)
+        s_dis.append(haversine(location.coord, p))
 
-    for i in s_name, s_dis:
-        name_n_dis.append(tuple(s_name[i], s_dis[i]))
+    for i in range(len((s_name))):
+        name_n_dis.append((s_name[i], s_dis[i]))
 
     return sorted_by_key(name_n_dis, 1)
+    
 
 """------------------------------------------"""
 
