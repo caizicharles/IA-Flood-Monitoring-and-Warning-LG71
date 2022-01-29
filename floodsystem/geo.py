@@ -38,8 +38,22 @@ def stations_by_distance(stations, p):
 """Task 1D"""
 
 def rivers_with_station(stations):
+
     return
 
+
+def stations_by_river(stations):
+    
+    s_name = []
+    s_dict = {}
+    
+    for location in stations:
+        s_name.append(location.name)
+    
+    for items in range(len(s_name)):
+        s_dict.update({str(s_name[items]):stations[items]})
+        
+    return s_dict
 
 """------------------------------------------"""
 
