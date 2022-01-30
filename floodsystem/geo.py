@@ -43,16 +43,21 @@ def rivers_with_station(stations):
 
 
 def stations_by_river(stations):
-    
-    s_name = []
+
+    river_name = set()
+    s_on_river = set()
     s_dict = {}
     
     for location in stations:
-        s_name.append(location.name)
+        river_name.add(location.river)
     
-    for items in range(len(s_name)):
-        s_dict.update({str(s_name[items]):stations[items]})
-        
+    for names in river_name:
+        for items in stations:
+            if items.river == names:
+                s_on_river.add(items.name)
+                s_dict.update({names:s_on_river})
+                s_on_river = set()
+ 
     return s_dict
 
 """------------------------------------------"""
