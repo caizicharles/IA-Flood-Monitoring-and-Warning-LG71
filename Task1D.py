@@ -2,7 +2,7 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
 
-def execute0():
+def execute_0():
     
     stations = build_station_list()
     rivers = rivers_with_station(build_station_list())
@@ -27,11 +27,11 @@ def execute0():
         
     return n, river_list
 
-print(execute0())
+print(execute_0())
 
 """------------------------------------------"""
 
-'''def execute2():
+'''def execute_1():
     
     dict = stations_by_river(build_station_list())
 
@@ -46,4 +46,4 @@ print(execute0())
 
     return river_1, river_2, river_3
 
-print(execute2())'''
+print(execute_1())'''
