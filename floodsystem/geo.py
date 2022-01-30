@@ -39,7 +39,12 @@ def stations_by_distance(stations, p):
 
 def rivers_with_station(stations):
 
-    return
+    river_name = set()
+
+    for river in stations:
+        river_name.add(river.river)
+
+    return river_name
 
 
 def stations_by_river(stations):
@@ -55,8 +60,8 @@ def stations_by_river(stations):
         for items in stations:
             if items.river == names:
                 s_on_river.add(items.name)
-                s_dict.update({names:s_on_river})
-                s_on_river = set()
+        s_dict.update({names:s_on_river})
+        s_on_river = set()
  
     return s_dict
 

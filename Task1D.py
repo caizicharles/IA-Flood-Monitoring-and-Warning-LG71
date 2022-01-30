@@ -4,11 +4,46 @@ from floodsystem.geo import stations_by_river
 
 def execute0():
     
-    return
+    stations = build_station_list()
+    rivers = rivers_with_station(build_station_list())
+    river_list0 = []
+    river_list = []
+    x = 0
+    n = 0
 
-def execute1():
+    for river in rivers:
+        for station in stations:
+            if river == station.river:
+                x += 1
+        if x >= 1:
+            n += 1
+            river_list0.append(river)
+            x = 0
 
-    sorted_keys = sorted(stations_by_river.keys())
-    sorted_s_dict = {key:stations_by_river[key] for key in sorted_keys}
+    river_list0.sort()
+    
+    for i in range(10):
+        river_list.append(river_list0[i])
+        
+    return n, river_list
 
-    return sorted_s_dict
+print(execute0())
+
+"""------------------------------------------"""
+
+'''def execute2():
+    
+    dict = stations_by_river(build_station_list())
+
+    river_1 = list(dict.get('River Aire'))
+    river_1.sort()
+
+    river_2 = list(dict.get('River Cam'))
+    river_2.sort()
+
+    river_3 = list(dict.get('River Thames'))
+    river_3.sort()
+
+    return river_1, river_2, river_3
+
+print(execute2())'''
