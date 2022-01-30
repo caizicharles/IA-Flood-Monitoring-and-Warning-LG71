@@ -31,7 +31,7 @@ print(execute_0())
 
 """------------------------------------------"""
 
-'''def execute_1():
+def execute_1():
     
     dict = stations_by_river(build_station_list())
 
@@ -46,4 +46,4 @@ print(execute_0())
 
     return river_1, river_2, river_3
 
-print(execute_1())'''
+print(execute_1())
